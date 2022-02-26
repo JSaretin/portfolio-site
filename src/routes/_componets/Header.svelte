@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/env';
+	import { goto } from '$app/navigation';
 
 	export let addShadow;
 	let showNav;
@@ -16,6 +17,10 @@
 			links.forEach((link) => {
 				link.addEventListener('click', () => {
 					showNav = false;
+					const href = link.querySelector('a').hash;
+					if (href) {
+						goto(href);
+					}
 				});
 			});
 		}
@@ -125,11 +130,11 @@
 
 	@media screen and (max-width: 900px) {
 		.show-nav {
-			animation: animate-nav 1s ease-in-out forwards;
+			animation: animate-nav .5s ease-in-out forwards;
 		}
 
 		.hide-nav {
-			animation: hide-nav 1s ease-in-out forwards;
+			animation: hide-nav .5s ease-in-out forwards;
 		}
 
 		.buger-menu {

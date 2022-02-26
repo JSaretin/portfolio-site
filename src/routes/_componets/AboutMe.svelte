@@ -62,14 +62,14 @@
 		word-spacing: 3px;
 		/* font-family: 'Redressed', cursive; */
 		font-family: 'Josefin Sans', sans-serif;
-		font-size: 20px;
+		font-size: 1.25rem;
 		color: var(--dark-second);
 		opacity: 0.8;
 	}
 
     @media screen and (max-width: 1200px) {
         .brif-intro p {
-			font-size: 18px;
+			font-size: 1.125rem;
 		}
     }
 
@@ -85,7 +85,7 @@
 		} */
 
 		.brif-intro p {
-			font-size: 16px;
+			font-size: 1rem;
 		}
 	}
 </style>

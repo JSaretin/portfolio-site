@@ -86,7 +86,7 @@
 		margin-top: 4rem;
 	}
 	h2 {
-		font-size: 35px;
+		font-size: 2.1875rem;
 		color: var(--dark-second);
 		/* border-bottom: 4px solid; */
 		/* padding-bottom: 1rem; */
@@ -98,7 +98,7 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		height: 4px;
+		height: 0.25rem;
 		margin: 1rem 0;
 		background-color: var(--primary-color);
 		transform: rotate(-3deg);
@@ -207,7 +207,7 @@
 			margin: 4rem 0;
 		}
 		h2 {
-			font-size: 30px;
+			font-size: 1.875rem;
 			position: relative;
 			/* overflow: hidden; */
 			/* transform: rotate(-4deg); */

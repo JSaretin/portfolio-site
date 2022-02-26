@@ -43,7 +43,7 @@
 		gap: 4rem;
 	}
 	.services-header-title {
-		font-size: 40px;
+		font-size: 2.5rem;
 		color: var(--second-color);
 		position: relative;
 		padding-bottom: 1rem;
@@ -75,7 +75,7 @@
 	}
 
 	.service h4 {
-		font-size: 20px;
+		font-size: 1.25rem;
 		color: var(--primary-color);
 	}
 
@@ -84,7 +84,7 @@
 		font-size: 1rem;
 		color: rgb(100, 100, 100);
 		line-height: 1.6;
-		word-spacing: 2px;
+		word-spacing: 0.125rem;
 		font-family: 'Josefin Sans', sans-serif;
 	}
 
@@ -110,9 +110,23 @@
 		}
 
 		.service p {
-			font-size: 15px;
+			font-size: 0.9375rem;
 			/* max-width: 100%; */
 			width: 100%;
 		}
 	}
+
+    @media screen and (max-width: 390px)
+    {
+        .service{
+            /* background-color: tomato; */
+        }
+        :root{
+            font-size: 0.625rem;
+        }
+        .service p{
+            /* background-color: rebeccapurple; */
+            
+        }
+    }
 </style>

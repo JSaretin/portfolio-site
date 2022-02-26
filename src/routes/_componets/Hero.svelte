@@ -170,10 +170,10 @@
             padding: 1rem;
         } */
 		.hero-title {
-			font-size: 26px;
+			font-size: 1.625rem;
 		}
 		.cta button {
-			font-size: 14px;
+			font-size: 0.875rem;
 			padding: 1rem;
 		}
 	}
@@ -188,14 +188,14 @@
 			height: fit-content;
 		}
 		.hero-title {
-			font-size: 26px;
+			font-size: 1.625rem;
 		}
 
 		.hero-about p {
-			font-size: 14px;
+			font-size: 0.875rem;
 		}
 		.cta button {
-			font-size: 14px;
+			font-size: 0.875rem;
 		}
 
 		.hero-image {
@@ -215,7 +215,7 @@
 			gap: 0;
 		}
 		.hero-title {
-			font-size: 24px;
+			font-size: 1.5rem;
 		}
 		.cta button {
 			font-size: 14px;
@@ -229,7 +229,7 @@
 
 	@media screen and (max-width: 833px) {
 		.cta button {
-			font-size: 13px;
+			font-size: 0.8125rem;
 			/* padding: 0.3rem 1rem; */
 		}
 
@@ -260,7 +260,7 @@
 
 		.cta button {
             width: 100%;
-			font-size: 14px;
+			font-size: 0.875rem;
 			padding: 1rem 1.4rem;
 		}
 
