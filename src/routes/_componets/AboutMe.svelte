@@ -88,4 +88,11 @@
 			font-size: 1rem;
 		}
 	}
+
+    @media screen and (max-width: 390px){
+        .brif-intro p{
+            min-width: 40ch;
+            text-align: center;
+        }
+    }
 </style>
