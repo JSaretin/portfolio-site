@@ -1,4 +1,23 @@
+<script context="module">
+	import { browser } from '$app/env';
+
+	export const load = async () => {
+		if (browser) {
+			const path = localStorage.getItem('path');
+			if (path) {
+				document.querySelector(path).scrollIntoView({ behavior: 'smooth' });
+				localStorage.removeItem('path');
+			}
+		}
+		return {
+			status: 200
+		};
+	};
+</script>
+
 <script>
+	// import { goto } from '$app/navigation';
+
 	import AboutMe from './_componets/AboutMe.svelte';
 
 	import Footer from './_componets/Footer.svelte';
@@ -10,7 +29,7 @@
 	import Testimonies from './_componets/Testimonies.svelte';
 
 	let addShadow = false;
-	let scrollUp = false;
+	let scrollUp = undefined;
 </script>
 
 <svelte:head>
@@ -41,7 +60,6 @@
 		if (window.pageYOffset > 50) {
 			addShadow = true;
 			if (window.pageYOffset >= document.body.scrollHeight / 5.5) {
-				// console.log(window.pageYOffset, document.body.scrollHeight);
 				scrollUp = true;
 			} else {
 				scrollUp = false;
@@ -53,9 +71,10 @@
 />
 
 <div
-	class={'scrollup ' + (scrollUp ? 'show' : 'hide')}
+	class={'scrollup ' + (scrollUp == undefined ? '' : scrollUp ? 'show' : 'hide')}
 	on:click={() => {
 		document.body.scrollIntoView({ behavior: 'smooth' });
+		localStorage.removeItem('path');
 	}}
 >
 	<div class="angle">
@@ -88,9 +107,9 @@
 <Footer />
 
 <style>
-    :root{
-        font-size: 18px;
-    }
+	:root {
+		font-size: 18px;
+	}
 	:global(:root) {
 		--primary-color: #ca6f00;
 		--dark-primary: #a55c03;
@@ -131,7 +150,7 @@
 		bottom: 38vh;
 		display: grid;
 		place-items: center;
-		/* opacity: 0; */
+		opacity: 0;
 	}
 
 	.angle {
@@ -142,9 +161,9 @@
 		overflow: hidden;
 	}
 
-    .angle svg {
-        stroke: var(--primary-color);
-    }
+	.angle svg {
+		stroke: var(--primary-color);
+	}
 
 	.show {
 		animation: show 1.5s ease forwards;
@@ -152,14 +171,13 @@
 	.hide {
 		animation: hide 1s ease forwards;
 	}
-    
 
 	@keyframes show {
 		from {
 			opacity: 0;
 		}
 		to {
-			opacity: .6;
+			opacity: 0.6;
 		}
 	}
 
@@ -176,16 +194,15 @@
 			width: 100%;
 		}
 
-        .scrollup{
-            bottom: 1rem;
-            z-index: 3;
-        }
+		.scrollup {
+			bottom: 1rem;
+			z-index: 3;
+		}
 	}
 
-    @media screen and (max-width: 390px)
-    {
-        :root{
-            font-size: 15px;
-        }
-    }
+	@media screen and (max-width: 390px) {
+		:root {
+			font-size: 15px;
+		}
+	}
 </style>

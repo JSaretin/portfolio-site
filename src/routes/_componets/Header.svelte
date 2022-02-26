@@ -4,41 +4,45 @@
 
 	export let addShadow;
 	let showNav;
+	let navLinks;
 
 	function moveToView(element) {
 		element.scrollIntoView({ behavior: 'smooth' });
 	}
 
-	function addEvent(link) {
-		link.addEventListener('click', (event) => {
-			event.preventDefault();
-			if (link.hash) {
-                showNav = false
-				moveToView(document.querySelector(link.hash));
-				// goto(link.hash,{noscroll: false, });
-			} else {
-				moveToView(document.body);
-			}
-		});
-	}
-
 	$: {
 		if (browser) {
 			document.body.style.overflowY = showNav ? 'hidden' : '';
-		}
-	}
-	let navLinks;
+			function addEvent(link) {
+				link.addEventListener('click', (event) => {
+					event.preventDefault();
+					if (link.hash) {
+						localStorage.setItem('path', link.hash);
+						showNav = false;
+						moveToView(document.querySelector(link.hash));
+						// goto(link.hash,{noscroll: false, });
+					} else {
+                        localStorage.removeItem('path')
+						moveToView(document.body);
+					}
+				});
+			}
 
-	$: {
-		if (navLinks) {
-			const links = navLinks.querySelectorAll('li a');
-			links.forEach((link) => addEvent(link));
+			if (navLinks) {
+				const links = navLinks.querySelectorAll('li a');
+				links.forEach((link) => addEvent(link));
+			}
 		}
 	}
 </script>
 
 <header>
-	<div class="logo" on:click={()=>{moveToView(document.body)}}>
+	<div
+		class="logo"
+		on:click={() => {
+			moveToView(document.body);
+		}}
+	>
 		<h1>Josas</h1>
 	</div>
 
