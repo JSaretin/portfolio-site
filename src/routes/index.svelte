@@ -31,21 +31,22 @@
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer"
 	/>
+
+	<title>Welcome To My Portfolio | JOHN OSARETIN</title>
 </svelte:head>
 
 <svelte:window
 	on:scroll={() => {
 		if (window.pageYOffset > 50) {
 			addShadow = true;
+		} else {
+			addShadow = false;
 		}
-        else{
-            addShadow = false
-        }
 	}}
 />
 
 <section>
-	<Header {addShadow}/>
+	<Header {addShadow} />
 	<Hero />
 	<AboutMe />
 
