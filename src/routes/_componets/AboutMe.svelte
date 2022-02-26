@@ -22,7 +22,8 @@
 
 <style>
 	section {
-		height: 40vh;
+		min-height: 40vh;
+        height: fit-content;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

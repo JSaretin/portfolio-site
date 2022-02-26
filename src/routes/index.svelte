@@ -10,6 +10,7 @@
 	import Testimonies from './_componets/Testimonies.svelte';
 
 	let addShadow = false;
+	let scrollUp = false;
 </script>
 
 <svelte:head>
@@ -39,11 +40,40 @@
 	on:scroll={() => {
 		if (window.pageYOffset > 50) {
 			addShadow = true;
+			if (window.pageYOffset >= document.body.scrollHeight / 5.5) {
+				// console.log(window.pageYOffset, document.body.scrollHeight);
+				scrollUp = true;
+			} else {
+				scrollUp = false;
+			}
 		} else {
 			addShadow = false;
 		}
 	}}
 />
+
+<div
+	class={'scrollup ' + (scrollUp ? 'show' : 'hide')}
+	on:click={() => {
+		document.body.scrollIntoView({ behavior: 'smooth' });
+	}}
+>
+	<div class="angle">
+		<svg
+			class="w-6 h-6"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+			xmlns="http://www.w3.org/2000/svg"
+			><path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"
+			/></svg
+		>
+	</div>
+</div>
 
 <section>
 	<Header {addShadow} />
@@ -88,11 +118,64 @@
 		padding: 0 3rem;
 	}
 
+	.scrollup {
+		width: 50px;
+		aspect-ratio: 1/1;
+		background-color: #03007d;
+		border-radius: 50%;
+		position: fixed;
+		right: 8%;
+		bottom: 38vh;
+		display: grid;
+		place-items: center;
+		/* opacity: 0; */
+	}
+
+	.angle {
+		width: 100%;
+		margin: auto;
+		aspect-ratio: 1/1;
+		position: relative;
+		overflow: hidden;
+	}
+
+    .angle svg {
+        stroke: var(--primary-color);
+    }
+
+	.show {
+		animation: show 1.5s ease forwards;
+	}
+	.hide {
+		animation: hide 1s ease forwards;
+	}
+    
+
+	@keyframes show {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: .6;
+		}
+	}
+
+	@keyframes hide {
+		to {
+			opacity: 0;
+		}
+	}
+
 	@media screen and (max-width: 700px) {
 		section {
 			padding: 0 1rem;
 			gap: 1rem;
 			width: 100%;
 		}
+
+        .scrollup{
+            bottom: 1rem;
+            z-index: 3;
+        }
 	}
 </style>

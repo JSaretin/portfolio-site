@@ -34,7 +34,8 @@
 
 <style>
 	section {
-		height: 40vh;
+		min-height: 40vh;
+		height: fit-content;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -45,7 +46,7 @@
 		font-size: 40px;
 		color: var(--second-color);
 		position: relative;
-        padding-bottom: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.services-header-title::after {
@@ -94,7 +95,7 @@
 		.services {
 			padding: 0 1rem;
 			flex-wrap: wrap;
-            width: 100%;
+			width: 100%;
 		}
 
 		.service {
@@ -102,16 +103,16 @@
 			flex: 1;
 			align-self: center;
 			justify-self: center;
-            justify-content: center;
-            place-items: center;
-            padding: 1rem;
-            width: 100%;
+			justify-content: center;
+			place-items: center;
+			padding: 1rem;
+			width: 100%;
 		}
 
 		.service p {
 			font-size: 15px;
-            /* max-width: 100%; */
-            width: 100%;
+			/* max-width: 100%; */
+			width: 100%;
 		}
 	}
 </style>
