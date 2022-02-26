@@ -4,9 +4,10 @@
 	};
 	const items = [];
 
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < 30; i++) {
 		const width = getRandomNumber();
-		const height = getRandomNumber(width);
+        const height = width;
+		// const height = getRandomNumber(width);
 		items.push(`${width}x${height}`);
 	}
 

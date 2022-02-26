@@ -259,8 +259,9 @@
 		}
 
 		.cta button {
+            width: 100%;
 			font-size: 14px;
-			padding: 0.8rem 1rem;
+			padding: 1rem 1.4rem;
 		}
 
 		.hero-image {

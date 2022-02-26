@@ -8,6 +8,8 @@
 	import Porfolio from './_componets/Porfolio.svelte';
 	import Services from './_componets/Services.svelte';
 	import Testimonies from './_componets/Testimonies.svelte';
+
+	let addShadow = false;
 </script>
 
 <svelte:head>
@@ -31,8 +33,19 @@
 	/>
 </svelte:head>
 
+<svelte:window
+	on:scroll={() => {
+		if (window.pageYOffset > 50) {
+			addShadow = true;
+		}
+        else{
+            addShadow = false
+        }
+	}}
+/>
+
 <section>
-	<Header />
+	<Header {addShadow}/>
 	<Hero />
 	<AboutMe />
 
@@ -49,7 +62,7 @@
 		--dark-primary: #a55c03;
 		--second-color: #03007d;
 		--dark-second: #101a6f;
-        --bg-color: #fff;
+		--bg-color: #fff;
 	}
 
 	:global(body) {
