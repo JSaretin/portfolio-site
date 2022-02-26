@@ -13,6 +13,7 @@
 		link.addEventListener('click', (event) => {
 			event.preventDefault();
 			if (link.hash) {
+                showNav = false
 				moveToView(document.querySelector(link.hash));
 				// goto(link.hash,{noscroll: false, });
 			} else {
