@@ -35,9 +35,9 @@
 	<nav class={'nav ' + (showNav != undefined ? (showNav == false ? 'hide-nav' : 'show-nav') : '')}>
 		<ul class="nav-links" bind:this={navLinks}>
 			<li><a href="/" class="nav-link">Home</a></li>
-			<li><a href="#AboutMe" class="nav-link">About Me</a></li>
-			<li><a href="#MyServices" class="nav-link">My Services</a></li>
-			<li><a href="#Portfolio" class="nav-link">See My Works</a></li>
+			<li><a href="#AboutMe" class="nav-link" sveltekit:prefetch>About Me</a></li>
+			<li><a href="#MyServices" class="nav-link" sveltekit:prefetch>My Services</a></li>
+			<li><a href="#Portfolio" class="nav-link" sveltekit:prefetch>See My Works</a></li>
 		</ul>
 
 		<div class="contact">
@@ -109,11 +109,11 @@
 	.contact-me {
 		padding: 0 2rem;
 		display: flex;
-		height: 40px;
+		height: 2.5rem;
 		outline: none;
 		border: none;
 		align-items: center;
-		border-radius: 8px;
+		border-radius: 0.5rem;
 		background-color: var(--second-color);
 		color: #fff;
 	}
@@ -130,16 +130,16 @@
 
 	@media screen and (max-width: 900px) {
 		.show-nav {
-			animation: animate-nav .5s ease-in-out forwards;
+			animation: animate-nav 0.5s ease-in-out forwards;
 		}
 
 		.hide-nav {
-			animation: hide-nav .5s ease-in-out forwards;
+			animation: hide-nav 0.5s ease-in-out forwards;
 		}
 
 		.buger-menu {
 			position: relative;
-			width: 40px;
+			width: 2.5rem;
 			aspect-ratio: 1/1;
 			display: flex;
 			flex-direction: column;
@@ -151,7 +151,7 @@
 
 		.buger-stroke {
 			width: 100%;
-			height: 4px;
+			height: 0.25rem;
 			background-color: var(--dark-second);
 		}
 
@@ -195,7 +195,7 @@
 			display: flex;
 			justify-content: center;
 			place-items: center;
-			font-size: 20px;
+			font-size: 1.25rem;
 		}
 
 		.nav-links {
@@ -215,7 +215,7 @@
 			content: '';
 			display: block;
 			position: absolute;
-			height: 4px;
+			height: 0.25rem;
 			left: 0;
 			right: 0;
 			background-color: #000;
