@@ -1,4 +1,4 @@
-<script>
+<script id="Testimonies">
 	import Section from './_layout/Section.svelte';
 	const testimonies = [
 		{

@@ -2,7 +2,7 @@
 	import Section from './_layout/Section.svelte';
 </script>
 
-<section>
+<section id="AboutMe">
 	<h2>Who I Am</h2>
 	<div class="content">
 		<div class="brif-intro">

@@ -18,10 +18,10 @@
 
 	<nav class={'nav ' + (showNav != undefined ? (showNav == false ? 'hide-nav' : 'show-nav') : '')}>
 		<ul class="nav-links">
-			<li><a href="#" class="nav-link">Home</a></li>
-			<li><a href="#" class="nav-link">About Me</a></li>
-			<li><a href="#" class="nav-link">My Services</a></li>
-			<li><a href="#" class="nav-link">See My Works</a></li>
+			<li><a href="/" class="nav-link">Home</a></li>
+			<li><a href="#AboutMe" class="nav-link">About Me</a></li>
+			<li><a href="#MyServices" class="nav-link">My Services</a></li>
+			<li><a href="#Portfolio" class="nav-link">See My Works</a></li>
 		</ul>
 
 		<div class="contact">

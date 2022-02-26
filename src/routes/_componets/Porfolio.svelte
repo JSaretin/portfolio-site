@@ -17,7 +17,7 @@
 	}
 </script>
 
-<section>
+<section id="Portfolio">
 	<h2 class="section-title">My Work</h2>
 	<div class="works">
 		{#each items as size}
