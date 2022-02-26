@@ -15,14 +15,14 @@
 			document.body.style.overflowY = showNav ? 'hidden' : '';
 			function addEvent(link) {
 				link.addEventListener('click', (event) => {
+					showNav = false;
 					event.preventDefault();
 					if (link.hash) {
 						localStorage.setItem('path', link.hash);
-						showNav = false;
 						moveToView(document.querySelector(link.hash));
 						// goto(link.hash,{noscroll: false, });
 					} else {
-                        localStorage.removeItem('path')
+						localStorage.removeItem('path');
 						moveToView(document.body);
 					}
 				});
