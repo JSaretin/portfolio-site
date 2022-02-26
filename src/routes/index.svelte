@@ -88,6 +88,9 @@
 <Footer />
 
 <style>
+    :root{
+        font-size: 18px;
+    }
 	:global(:root) {
 		--primary-color: #ca6f00;
 		--dark-primary: #a55c03;
