@@ -63,6 +63,7 @@
 				scrollUp = true;
 			} else {
 				scrollUp = false;
+                localStorage.removeItem('path');
 			}
 		} else {
 			addShadow = false;
