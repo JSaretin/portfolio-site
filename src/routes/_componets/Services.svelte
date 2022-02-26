@@ -118,15 +118,10 @@
 
     @media screen and (max-width: 390px)
     {
-        .service{
-            /* background-color: tomato; */
-        }
-        :root{
-            font-size: 0.625rem;
-        }
+
         .service p{
             /* background-color: rebeccapurple; */
-            
+            min-width: 40ch;
         }
     }
 </style>

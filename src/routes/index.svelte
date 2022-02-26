@@ -178,4 +178,11 @@
             z-index: 3;
         }
 	}
+
+    @media screen and (max-width: 390px)
+    {
+        :root{
+            font-size: 15px;
+        }
+    }
 </style>
