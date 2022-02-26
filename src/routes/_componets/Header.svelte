@@ -9,6 +9,17 @@
 			document.body.style.overflowY = showNav ? 'hidden' : '';
 		}
 	}
+	let navLinks;
+	$: {
+		if (navLinks) {
+			const links = navLinks.querySelectorAll('li');
+			links.forEach((link) => {
+				link.addEventListener('click', () => {
+					showNav = false;
+				});
+			});
+		}
+	}
 </script>
 
 <header>
@@ -17,7 +28,7 @@
 	</div>
 
 	<nav class={'nav ' + (showNav != undefined ? (showNav == false ? 'hide-nav' : 'show-nav') : '')}>
-		<ul class="nav-links">
+		<ul class="nav-links" bind:this={navLinks}>
 			<li><a href="/" class="nav-link">Home</a></li>
 			<li><a href="#AboutMe" class="nav-link">About Me</a></li>
 			<li><a href="#MyServices" class="nav-link">My Services</a></li>
