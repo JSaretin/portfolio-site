@@ -44,6 +44,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4rem;
+		scroll-snap-type: y mandatory;
+
 		/* background-color: rgb(206, 176, 236); */
 	}
 

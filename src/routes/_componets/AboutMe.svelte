@@ -7,14 +7,16 @@
 	<div class="content">
 		<div class="brif-intro">
 			<p>
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel voluptates cum provident
-				doloremque non, ea error soluta, hic cumque harum perferendis voluptate consectetur animi
-				assumenda quibusdam accusantium reiciendis optio a?
+				I am John Osaretin, a computer programmer from Nigeria, I love solving computer problem,
+				when am not busy designing beautiful websites <a href="#" class="animate-link"
+					><span class="animate-work">like these</span></a
+				>, I love to create IOT and work on other open-source project
 			</p>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, dolorum nesciunt earum quod
-				ipsam magnam est recusandae architecto praesentium cumque autem magni dolore maiores officia
-				quae ipsa iusto assumenda! Fugiat.
+				I am well experienced in front and backend development, Arduino's and IOTs. My years of
+				programming has truly impact the way I think when dealing with various problem should be
+				tackle. I believe that programming is all about problem solving and making world a better
+				place using these knowledge.
 			</p>
 		</div>
 	</div>
@@ -23,7 +25,7 @@
 <style>
 	section {
 		min-height: 40vh;
-        height: fit-content;
+		height: fit-content;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -50,11 +52,11 @@
 		transform: rotate(2deg);
 	}
 
-	.brif-intro{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+	.brif-intro {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
 
 	.brif-intro p {
 		max-width: 60ch;
@@ -67,18 +69,17 @@
 		opacity: 0.8;
 	}
 
-    @media screen and (max-width: 1200px) {
-        .brif-intro p {
+	@media screen and (max-width: 1200px) {
+		.brif-intro p {
 			font-size: 1.125rem;
 		}
-    }
-
+	}
 
 	@media screen and (max-width: 900px) {
 		section {
 			height: 70vh;
 			gap: 2rem;
-            /* margin-bottom: 4rem; */
+			/* margin-bottom: 4rem; */
 		}
 		/* h2 {
 			font-size: 35px;
@@ -89,10 +90,22 @@
 		}
 	}
 
-    @media screen and (max-width: 390px){
-        .brif-intro p{
-            min-width: 40ch;
-            text-align: center;
-        }
-    }
+	@media screen and (max-width: 390px) {
+		.brif-intro p {
+			min-width: 40ch;
+			text-align: center;
+		}
+	}
+
+	.animate-link {
+		text-decoration: none;
+	}
+
+	/* .animate-work{
+		width: 3px;
+		background: linear-gradient(to left, var(--dark-second), var(--primary-color));
+		-webkit-background-clip: text;
+		-webkit-text-stroke: 2px transparent;
+		color: var(--bg-color);
+	} */
 </style>

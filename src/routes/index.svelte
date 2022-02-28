@@ -24,12 +24,14 @@
 
 	import Header from './_componets/Header.svelte';
 	import Hero from './_componets/Hero.svelte';
+	import PopUp from './_componets/PopUp.svelte';
 	import Porfolio from './_componets/Porfolio.svelte';
 	import Services from './_componets/Services.svelte';
 	import Testimonies from './_componets/Testimonies.svelte';
 
 	let addShadow = false;
 	let scrollUp = undefined;
+	let showContact = false;
 </script>
 
 <svelte:head>
@@ -63,7 +65,7 @@
 				scrollUp = true;
 			} else {
 				scrollUp = false;
-                localStorage.removeItem('path');
+				localStorage.removeItem('path');
 			}
 		} else {
 			addShadow = false;
@@ -96,6 +98,9 @@
 </div>
 
 <section>
+	{#if showContact}
+		<PopUp />
+	{/if}
 	<Header {addShadow} />
 	<Hero />
 	<AboutMe />
@@ -139,6 +144,7 @@
 		flex-direction: column;
 		gap: 2rem;
 		padding: 0 3rem;
+		position: relative;
 	}
 
 	.scrollup {

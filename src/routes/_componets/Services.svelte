@@ -8,25 +8,23 @@
 		<div class="service">
 			<h4>Web Development</h4>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia debitis similique, sunt
-				molestias molestiae sint blanditiis, magnam itaque minima quibusdam magni. Dolores
-				consequatur non fuga exercitationem itaque facilis quo nam!
+				I will create that wonderful website of yours using the most latest and up-to-date tech
+				available. so you can be rest-assured about security and compatibility.
 			</p>
 		</div>
 		<div class="service">
-			<h4>Web Development</h4>
+			<h4>RestAPI development</h4>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia debitis similique, sunt
-				molestias molestiae sint blanditiis, magnam itaque minima quibusdam magni. Dolores
-				consequatur non fuga exercitationem itaque facilis quo nam!
+				I will create REST backend for your IOT project. I am most suited if you need a blazey
+				RESTAPI backend for your project.
 			</p>
 		</div>
 		<div class="service">
-			<h4>Web Development</h4>
+			<h4>Smart Contract Development</h4>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia debitis similique, sunt
-				molestias molestiae sint blanditiis, magnam itaque minima quibusdam magni. Dolores
-				consequatur non fuga exercitationem itaque facilis quo nam!
+				Web3 is the hottest trend right now, you can sit-back and watch the revolution or take the
+				blue pill and ride-along with me on this train. I will create NFT for your project
+				integrated with a front-end.
 			</p>
 		</div>
 	</div>
@@ -116,12 +114,10 @@
 		}
 	}
 
-    @media screen and (max-width: 390px)
-    {
-
-        .service p{
-            /* background-color: rebeccapurple; */
-            min-width: 40ch;
-        }
-    }
+	@media screen and (max-width: 390px) {
+		.service p {
+			/* background-color: rebeccapurple; */
+			min-width: 40ch;
+		}
+	}
 </style>

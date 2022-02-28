@@ -1,19 +1,41 @@
+<script>
+	let svg;
+	$: if (svg) {
+		const paths = svg.querySelectorAll('path');
+		paths.forEach((path, index) => {
+			const width = path.getTotalLength();
+			path.style['stroke-dasharray'] = width;
+			console.log(width);
+		});
+	}
+</script>
+
 <div class="hero">
 	<div class="hero-about">
 		<h3 class="hero-title">I am John Osaretin</h3>
 		<p class="hero-brif">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum tempore nesciunt,
-			adipisci blanditiis aut nemo itaque,
+			Not just a another programmer, but one with a canvas. So what's your story gonna be?
+			<!-- You diserve nothing but the best, and am ready to deliver nothing but the best. -->
 		</p>
 		<div class="cta">
-			<button class="active">Get In Touch</button>
-			<button class="check-work">Check My Portfolio</button>
+			<button
+				class="active"
+				on:click={() => {
+					document.getElementById('MyWork').scrollIntoView({ behavior: 'smooth' });
+				}}>Get In Touch</button
+			>
+			<button
+				class="check-work"
+				on:click={() => {
+					document.getElementById('MyServices').scrollIntoView({ behavior: 'smooth' });
+				}}>Check My Portfolio</button
+			>
 		</div>
 	</div>
 
 	<div class="hero-image">
-		<!-- <img src="https://source.unsplash.com/random/600x800?man" alt="hero image" /> -->
-		<img src="/bg.jpeg" alt="hero image" />
+		<!-- <img src="/bg.jpeg" alt="hero image" /> -->
+		<img src="/main-bg.jpeg" alt="hero image" />
 	</div>
 </div>
 
@@ -37,22 +59,20 @@
 		flex: 1;
 	}
 
-    .hero-image {
+	.hero-image {
 		height: 100%;
 		display: flex;
 		justify-content: flex-end;
-        opacity: 0;
-        transform: translateY(-50px);
-        animation: slide-image 1.5s ease forwards 1.5s;
+		opacity: 0;
+		transform: translateY(-50px);
+		animation: slide-image 1.5s ease forwards 1.5s;
 	}
 
 	.hero-image img {
 		height: 100%;
 		aspect-ratio: 1.1/1;
-		object-fit: cover;
-        
+		object-fit: contain;
 	}
-
 
 	.hero-title {
 		font-size: 60px;
@@ -62,34 +82,33 @@
 		-webkit-background-clip: text;
 		text-shadow: 4px 4px 3px transparent;
 		text-transform: uppercase;
-        opacity: 0;
+		opacity: 0;
 
-        transform: translateY(-50px);
-        animation: slide-image 2s ease forwards;
+		transform: translateY(-50px);
+		animation: slide-image 2s ease forwards;
 	}
 
 	.hero-brif {
 		justify-self: flex-end;
 		max-width: 60ch;
 		line-height: 1.6;
-        background-color: inherit;
-        z-index: 1;
+		background-color: inherit;
+		z-index: 1;
 		color: rgb(97, 97, 97);
-        background-color: var(--bg-color);
+		background-color: var(--bg-color);
 		font-family: 'Josefin Sans', sans-serif;
-        opacity: 0;
-        transform: translateY(-50px);
-        animation: slide-image 1.5s ease forwards .5s;
+		opacity: 0;
+		transform: translateY(-50px);
+		animation: slide-image 1.5s ease forwards 0.5s;
 	}
 
-	
 	.cta {
 		display: flex;
-        opacity: 0;
+		opacity: 0;
 		gap: 1rem;
 		margin-top: 2rem;
-        transform: translateY(-50px);
-        animation: slide-image 2s ease forwards 2s;
+		transform: translateY(-50px);
+		animation: slide-image 2s ease forwards 2s;
 	}
 
 	.cta button {
@@ -137,16 +156,16 @@
 
 		.hero-image {
 			height: 100%;
-            width: 100%;
+			width: 100%;
 			display: flex;
 			justify-content: center;
 			place-items: center;
 		}
 
-        .hero-image img {
-            width: 80%;
-            object-fit: contain;
-        }
+		.hero-image img {
+			width: 80%;
+			object-fit: contain;
+		}
 
 		.hero-title {
 			font-size: 30px;
@@ -243,35 +262,35 @@
 			display: flex;
 			flex-direction: column-reverse;
 			justify-content: flex-start;
-            padding: 0;
+			padding: 0;
 			justify-content: center;
 			height: 80vh;
-            gap: 2rem;
-            margin-bottom: 2rem;
+			gap: 2rem;
+			margin-bottom: 2rem;
 		}
 
-        .hero-about{
-            justify-content: flex-start;
-        }
+		.hero-about {
+			justify-content: flex-start;
+		}
 
 		.hero-title {
 			font-size: 25px;
 		}
 
 		.cta button {
-            width: 100%;
+			width: 100%;
 			font-size: 0.875rem;
 			padding: 1rem 1.4rem;
 		}
 
 		.hero-image {
-			height: 60%;
-            width: 100%;
-            padding: 0;
+			height: 100%;
+			width: 100%;
+			padding: 0;
 		}
 
 		.hero-image img {
-            object-fit: cover;
+			object-fit: cover;
 		}
 	}
 </style>
